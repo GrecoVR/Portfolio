@@ -11,9 +11,9 @@ return new class extends Migration
     {
         Schema::create('social_links', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->unique();
             $table->string('url');
-            $table->string('icon');
+            $table->string('icon')->nullable();
             $table->timestamps();
         });
     }

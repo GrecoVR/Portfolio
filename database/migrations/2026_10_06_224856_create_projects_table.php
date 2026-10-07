@@ -11,12 +11,12 @@ return new class extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('description');
-            $table->string('slug');
-            $table->string('image');
+            $table->text('description');
+            $table->string('slug')->unique();
+            $table->string('image')->nullable();
             $table->string('demo_url')->nullable();
             $table->string('github_url')->nullable();
-            $table->string('status');
+            $table->string('status')->default('active');
             $table->timestamps();
             
         });

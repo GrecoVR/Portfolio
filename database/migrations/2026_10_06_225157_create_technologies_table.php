@@ -11,10 +11,10 @@ return new class extends Migration
     {
         Schema::create('technologies', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->unique();
             $table->string('section');
             $table->string('slug')->unique();
-            $table->string('icon');
+            $table->string('icon')->nullable();
             $table->timestamps();
         });
     }
