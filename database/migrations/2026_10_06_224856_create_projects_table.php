@@ -13,7 +13,6 @@ return new class extends Migration
             $table->string('name');
             $table->text('description');
             $table->string('slug')->unique();
-            $table->string('image')->nullable();
             $table->string('demo_url')->nullable();
             $table->string('github_url')->nullable();
             $table->string('status')->default('active');
