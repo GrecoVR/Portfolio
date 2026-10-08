@@ -14,6 +14,7 @@ class Project extends Model
         'demo_url',
         'github_url',
         'status',
+        'is_featured',
     ];
     public function technologies()
     {

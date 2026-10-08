@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('demo_url')->nullable();
             $table->string('github_url')->nullable();
             $table->string('status')->default('active');
+            $table->boolean('is_featured')->default(false);
             $table->timestamps();
             
         });
