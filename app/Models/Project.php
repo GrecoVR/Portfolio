@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Technology;
+use App\Models\Image;
 
 class Project extends Model
 {
@@ -10,7 +12,6 @@ class Project extends Model
         'name',
         'description',
         'slug',
-        'image',
         'demo_url',
         'github_url',
         'status',
@@ -20,4 +21,16 @@ class Project extends Model
     {
         return $this->belongsToMany(Technology::class);
     }
+
+    public function images()
+    {
+        return $this->hasMany(Image::class);
+    }
+
+    public function coverImage()
+    {
+        return $this->hasOne(Image::class)->where('is_cover', true);
+    }
 }
+
+
