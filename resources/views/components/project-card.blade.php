@@ -1,9 +1,13 @@
 <article>
     @if($project->images->isNotEmpty())
-        <img 
-            src="{{ $project->images->first()->path }}" 
-            alt="{{ $project->images->first()->alt_text }}"
-        >
+        <div> class="project-carrousel" data-carousel>
+            @foreach($project->images as $image)
+                <img 
+                    src="{{ $project->images->first()->path }}" 
+                    alt="{{ $project->images->first()->alt_text }}"
+                >
+            @endforeach
+        </div>
     @endif
     <h3>{{ $project->name }}</h3>
     @if ($project->technologies->isNotEmpty())

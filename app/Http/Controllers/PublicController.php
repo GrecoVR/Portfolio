@@ -35,10 +35,16 @@ class PublicController extends Controller
     {
         $projects = Project::with([
             'technologies',
-            'coverImage',
+            'images',
         ])
+            ->where('status', 'active')
             ->latest()
             ->get();
-        return view('public.projects', compact('projects'));
+        return view('public.projects.index', compact('projects'));
+    }
+
+    public function contact()
+    {
+        return view('public.contact');
     }
 }
